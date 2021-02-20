@@ -1,0 +1,181 @@
+@import "varaibles";
+
+.skillMain {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 9rem;
+  padding-bottom: 15rem;
+  background-color: $color-black-2;
+  overflow: hidden;
+}
+
+.skillContainer {
+  position: relative;
+  width: 100%;
+  max-width: $full-width;
+  margin: 0 auto;
+}
+
+.skillTitle {
+  font-size: 14rem;
+  letter-spacing: 1rem;
+  color: $color-black-2;
+  text-align: center;
+  text-shadow: 1px -1px 0 white, -1px 1px 0 white, -1px -1px 0 white, 1px 1px 0 white;
+  margin-bottom: 10rem;
+}
+
+.skillContent {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20rem;
+  grid-row-gap: 5rem;
+}
+
+.verticalLine {
+  position: absolute;
+
+  height: calc(100% + 16rem);
+  width: 2px;
+  background-color: $color-red-1;
+  transform: translateX(-50%) translateY(-4rem);
+  left: 50%;
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: $color-red-1;
+    transform: translate(-50%, 0);
+  }
+
+  &:before {
+    top: -1rem;
+  }
+  &:after {
+    bottom: -1rem;
+  }
+}
+
+.skill {
+
+  .nameOfSkill {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 3rem;
+
+    span:last-child {
+      display: inline-block;
+      width: 80%;
+      height: 2px;
+      background-image: linear-gradient(to right, $color-grey-dark, $color-black-2);
+      align-self: center;
+    }
+  }
+
+  .descOfSkill {
+    font-size: 1.75rem;
+  }
+
+
+  height: 20rem;
+  border-radius: .5rem;
+  border: 1px solid $color-grey-dark;
+  background-color: $color-black-2;
+
+  color: $color-grey-dark;
+  padding: 3rem;
+  position: relative;
+
+  .skillCircleTail {
+    width: 15rem;
+    height: 3.4rem;
+    position: absolute;
+    top: 4.5rem;
+  }
+
+  .skillCircle {
+    width: 3.4rem;
+    height: 3.4rem;
+    position: absolute;
+    top: 4.5rem;
+    background-color: $color-red-1;
+    z-index: 2;
+    border-radius: 50%;
+    border: .75rem solid $color-grey-dark-2;
+  }
+
+  &.left {
+    .skillCircleTail {
+      right: -10rem;
+      background: linear-gradient(to right, rgba($color-black, 0) 1%, rgba($color-grey-dark, .99) 99%, rgba($color-grey-dark, 1) 100%);
+    }
+    .skillCircle {
+      right: -11.7rem;
+    }
+  }
+
+  &.right {
+
+    &[data-aos="fade-left"] {
+      opacity: 0;
+      transform: translate3d(100px, 8rem, 0);
+    }
+    &:global.aos-animate {
+      opacity: 1;
+      transform: translate3d(0, 8rem, 0)!important;
+    }
+
+    transform: translate(0, 8rem);
+    .skillCircleTail {
+      left: -10rem;
+      background: linear-gradient(to left, rgba($color-black, 0) 1%, rgba($color-grey-dark, .99) 99%, rgba($color-grey-dark, 1) 100%);
+    }
+
+    .skillCircle {
+      left: -11.7rem;
+    }
+  }
+}
+
+.balloon {
+  position: absolute;
+  height: 100%;
+  width: 50rem;
+  right: 0; bottom: 0;
+  background-image: url("/images/balloon.png");
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  animation: balloonAnimation 5s linear infinite;
+  transform-origin: bottom right;
+
+  //div {
+  //  background-color: $color-red-1;
+  //  width: 3rem;
+  //  height: 3rem;
+  //  border-radius: 50%;
+  //  position: absolute;
+  //  right: 90px;
+  //  bottom: 80px;
+  //}
+}
+
+@keyframes balloonAnimation {
+  0%, 100% {
+    transform: rotateZ(0deg);
+  }
+
+  50% {
+    transform: rotateZ(10deg);
+  }
+}
+
+

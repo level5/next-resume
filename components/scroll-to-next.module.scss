@@ -1,0 +1,40 @@
+@import "varaibles";
+
+.scrollFlag {
+  color: $color-grey-dark;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  position: absolute;
+  left: 2rem;
+  bottom: 5rem;
+
+  cursor: pointer;
+
+  transform: rotateZ(-90deg);
+  transform-origin: left top;
+
+  span:first-child {
+    font-size: 1rem;
+    display: inline-block;
+    animation: leftRight 1.5s ease-in infinite;
+  }
+  span:last-child {
+    padding-left: 2rem;
+  }
+}
+
+@keyframes leftRight {
+  0% {
+    transform: translateX(-0.5rem);
+  }
+
+  50% {
+    transform: translateX(.5rem);
+  }
+
+  100% {
+    transform: translateX(-0.5rem);
+  }
+}

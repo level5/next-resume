@@ -1,0 +1,30 @@
+@import "varaibles";
+
+.tags {
+  margin-bottom: 1rem;
+  list-style: none;
+  display: flex;
+  color: $color-white;
+  li {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: $color-grey-light;
+  }
+}
+
+.title {
+  font-size: 5rem;
+  text-shadow: 0 2px 2px rgba($color-black, .5);
+  color: $color-white;
+  margin-bottom: 2rem;
+}
+
+.author {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: $color-grey-light;
+}

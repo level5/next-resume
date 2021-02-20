@@ -1,0 +1,73 @@
+@import "varaibles";
+
+.main {
+  padding: 9rem 5rem;
+
+  background-color: $color-black-2;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 14rem;
+  font-weight: 900;
+  letter-spacing: 1rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $color-grey-dark;
+  margin-bottom: 5rem;
+  cursor: pointer;
+
+}
+
+.articlesContainer {
+  width: $full-width;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 3rem
+}
+
+.article {
+  background-color: $color-white;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.articleTag {
+  list-style: none;
+  display: flex;
+  li {
+  font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: $color-blue-light-1;
+    font-weight: 700;
+    margin-right: 1rem;
+    text-transform: uppercase;
+  }
+  margin-bottom: 1.5rem;
+}
+
+.articleTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+
+
+  a:link, a:visited, a:active, a:hover {
+    text-decoration: none;
+    color: $color-black-2;
+  }
+}
+
+.articleContent {
+  font-size: 1.5rem;
+  color: $color-grey-dark-2;
+  margin-bottom: 2rem;
+}
+
+.articleAuthor {
+  margin-block-start: auto;
+  text-align: right;
+  color: $color-grey-dark-2;
+}

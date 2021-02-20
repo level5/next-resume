@@ -1,0 +1,23 @@
+@import "varaibles";
+
+.main {
+  position: relative;
+  background-color: $color-black-2;
+  padding: 9rem 5rem;
+
+  &:before {
+    content: "";
+    height: 60rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-image: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);
+  }
+}
+
+.articleContainer {
+    margin: 0 auto;
+    width: $full-width;
+    position: relative;
+}

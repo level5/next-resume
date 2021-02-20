@@ -1,0 +1,70 @@
+@import "varaibles";
+
+.main {
+  min-height: 100vh;
+  padding: 10rem 0;
+  color: $color-white;
+  background-color: $color-black-2;
+  position: relative;
+}
+
+.eclipse {
+  width: 59rem;
+  height: 59rem;
+  position: absolute;
+  left: 30rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background-image: url("/images/blog-ellipse.png");
+  background-size: 100%;
+  background-position: 50% 50%;
+
+  animation: eclipseAnimation 2s linear infinite;
+}
+
+.articleContainer {
+  width: $full-width;
+  margin: 0 auto;
+  display: flex;
+}
+
+
+// ===== More Articles ====
+.moreArticles {
+
+}
+.moreArticlesTitle {
+  font-size: 5rem;
+}
+.moreArticlesSubTitle {
+  margin-top: 3rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.moreIcon {
+  &:link, &:visited {
+    color: $color-white;
+  }
+  font-size: 2.5rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: $color-red-1;
+  text-align: center;
+  line-height: 5rem;
+  margin-left: 3rem;
+  display: inline-block;
+}
+// ========================
+
+@keyframes eclipseAnimation {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}

@@ -1,0 +1,14 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  // 默认字体为16px，我们这里将rem设置为 16px * 62.5% = 10px
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}

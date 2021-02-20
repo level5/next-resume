@@ -1,0 +1,364 @@
+@import "varaibles";
+
+
+
+
+.careerContainer {
+
+  padding-top: 15rem;
+
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  background-color: $color-black-2;
+
+  background-image: url("/images/sea.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+
+  overflow-x: hidden;
+}
+
+.contentContainer {
+  width: $full-width;
+  margin: 0 auto;
+}
+
+.companyContainer {
+  color: $color-white;
+
+  display: flex;
+
+  position: relative;
+  margin-right: 0;
+  margin-left: auto;
+
+  min-height: 50rem;
+}
+
+.companyArea {
+  margin-right: 5rem;
+  width: 50rem;
+  padding-top: 3rem;
+  position: relative;
+
+  overflow: hidden;
+}
+
+.company {
+  width: 100%;
+  position: absolute;
+  transition: left 1s linear;
+  left: 0;
+}
+
+.companyPre {
+  left: -100%;
+}
+
+.companyNext {
+  left: 100%;
+}
+
+.companyHeader {
+  font-size: 3rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+}
+
+.companyHeaderSub {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.companyTitle {
+  font-size: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.companyDesc {
+  font-size: 1.4rem;
+  color: $color-grey-light;
+  line-height: 1.6;
+}
+
+.slideController {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+
+  > span {
+    font-size: 2.5rem;
+    color: $color-red-1;
+  }
+}
+
+.buttonLeft, .buttonRight {
+  color: $color-grey-dark;
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+
+
+  border-radius: 50%;
+  border: 1px solid $color-grey-dark;
+  text-align: center;
+
+  font-size: 2rem;
+
+  margin-right: 2rem;
+
+  transition: all .3s;
+
+  &:hover {
+    color: $color-white;
+    font-size: 2.2rem;
+
+    background-color: $color-red-1;
+    border: 1px solid $color-red-1;
+  }
+}
+
+.projectsContainer {
+  display: flex;
+
+  position: relative;
+  width: calc(100% - 53rem);
+}
+
+.projects {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 6rem;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  perspective: 200rem;
+  transition: all 2s;
+  visibility: visible;
+
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(
+                    90deg
+            ,#434343,#434343 1px,#262626 0,#262626);
+  }
+
+  &::-webkit-scrollbar {
+    background-color: #F5F5F5;
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #434343;
+    border-radius: 10px;
+
+    box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%), inset -2px -2px 2px rgb(0 0 0 / 25%);
+  }
+}
+
+.projectsPre, .projectsNext {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.project {
+  background-image: linear-gradient(
+                  85deg, $color-grey-dark-2, $color-black-light);
+
+  min-width: 30rem;
+  min-height: 35rem;
+
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: -2rem 0 3rem -2rem #000;
+
+  transition: all .3s;
+  transform: rotateZ(3deg);
+  &:hover {
+    transform: translateY(-1rem) rotateZ(0deg) scale(1.25);
+    z-index: 2;
+    &~.project {
+      transform: translateX(13rem);
+
+    }
+  }
+
+  &:not(:first-child) {
+    margin-left: -13rem;
+    box-shadow: -3rem 0 3rem -2rem #000;
+  }
+
+  &:last-child:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: -8rem;
+      width: 8rem;
+      height: 1px;
+  }
+}
+
+.boat {
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("/images/boat.png");
+  animation: sail 20s linear 0s infinite;
+  bottom: 26%;
+  right: 98%;
+  transform: rotateZ(35deg);
+
+
+}
+
+@keyframes sail {
+  0% {
+    bottom: 5%;
+    right: 0;
+    transform: rotateZ(24deg);
+  }
+
+  5% {
+    bottom: 13%;
+    right: 5%;
+    transform: rotateZ(32deg);
+  }
+
+  10% {
+    bottom: 18%;
+    right: 10%;
+    transform: rotateZ(29deg);
+  }
+
+  15% {
+    bottom: 22%;
+    right: 15%;
+    transform: rotateZ(20deg);
+  }
+
+  20% {
+    bottom: 24%;
+    right: 20%;
+    transform: rotateZ(5deg);
+  }
+
+  30% {
+    bottom: 19%;
+    right: 30%;
+    transform: rotateZ(-12deg);
+  }
+
+  40% {
+    bottom: 10%;
+    right: 40%;
+    transform: rotateZ(-12deg);
+  }
+
+  50% {
+    bottom: 6%;
+    right: 50%;
+    transform: rotateZ(-1deg);
+  }
+
+  60% {
+    bottom: 5%;
+    right: 60%;
+    transform: rotateZ(-1deg);
+  }
+
+  70% {
+    bottom: 7%;
+    right: 70%;
+    transform: rotateZ(9deg);
+  }
+
+  80% {
+    bottom: 12%;
+    right: 80%;
+    transform: rotateZ(10deg);
+  }
+
+  90% {
+    bottom: 15%;
+    right: 90%;
+    transform: rotateZ(10deg);
+  }
+
+  100% {
+    bottom: 26%;
+    right: 100%;
+    transform: rotateZ(35deg);
+  }
+}
+
+.careerWorkingPeriod {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  font-size: 14rem;
+  font-weight: 900;
+  letter-spacing: 1rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $color-grey-dark;
+}
+
+
+.projectTitle {
+  color: $color-grey-light-2;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.projectTagContainer {
+  margin-bottom: 1rem;
+
+}
+
+.projectTechTag {
+  border-radius: 3px;
+  border: 1px solid $color-grey-dark;
+  //background-color: $color-red-1;
+  display: inline-block;
+  padding: .2rem .3rem;
+  margin: .2rem 0;
+  &:not(first-child) {
+    margin-left: 5px;
+  }
+    color: $color-grey-dark;
+  &:first-letter {
+  }
+}
+
+.projectDesc {
+  margin-bottom: 1rem;
+  color: $color-grey-light-2;
+  .projectDescTitle {
+    color: $color-grey-dark;
+    margin-bottom: .7rem;
+
+  }
+    a:link, a:visited {
+      color: $color-grey-light;
+    }
+}
+
+.projectResp {
+  margin-bottom: 1rem;
+  color: $color-grey-light-2;
+  .projectRespTitle {
+    color: $color-grey-dark;
+    margin-bottom: .7rem;
+  }
+}
