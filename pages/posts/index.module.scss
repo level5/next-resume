@@ -32,6 +32,11 @@
   background-color: $color-white;
   padding: 2rem;
   border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgba($color-white, .9);
 }
 
 .articleTag {
@@ -70,4 +75,6 @@
   margin-block-start: auto;
   text-align: right;
   color: $color-grey-dark-2;
+
+
 }

@@ -6,6 +6,7 @@
   color: $color-white;
   background-color: $color-black-2;
   position: relative;
+  overflow-x: hidden;
 }
 
 .eclipse {
@@ -27,7 +28,30 @@
   width: $full-width;
   margin: 0 auto;
   display: flex;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  div:last-child {
+    font-size: 10rem;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $color-grey-dark-2;
+    color: $color-grey-light-2;
+    margin-left: 10rem;
+  }
 }
+
+// ===== Title =====
+.blogsTitle {
+  font-size: 14rem;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $color-grey-dark-2;
+  color: $color-black-2;
+  position: absolute;
+}
+// =================
 
 
 // ===== More Articles ====

@@ -2,13 +2,15 @@
 
 .scrollFlag {
   color: $color-grey-dark;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
 
   position: absolute;
   left: 2rem;
   bottom: 5rem;
+  display: flex;
+  align-items: center;
 
   cursor: pointer;
 
@@ -16,7 +18,8 @@
   transform-origin: left top;
 
   span:first-child {
-    font-size: 1rem;
+    font-size: 2rem;
+    color: red;
     display: inline-block;
     animation: leftRight 1.5s ease-in infinite;
   }

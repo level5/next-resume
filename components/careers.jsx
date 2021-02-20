@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import throttle from 'lodash/throttle';
+import { useViewPercentage } from '../hooks/custom-hook';
+import ScrollToNext from './scroll-to-next';
 
 const companies = [
   {
@@ -30,6 +32,7 @@ const companies = [
     title: 'SE',
     from: new Date(2018, 5),
     to: new Date(2020, 6),
+    duration: '25 months',
     desc:
       '在项目担任SE职位，职责是负责特性的设计工作，并确保开发特性交付， 同时会做一些前后端核心特性的开发工作。',
     projects: [
@@ -86,6 +89,7 @@ const companies = [
     title: 'Specialist',
     from: new Date(2015, 4),
     to: new Date(2018, 4),
+    duration: '36 months',
     desc:
       '在Scrum Team担任Architecture Owner。负责本小组业务的架构，技术预研，以及相关业务前后端的开发工作。',
     projects: [
@@ -114,6 +118,7 @@ const companies = [
     title: '高级软件工程师',
     from: new Date(2014, 7),
     to: new Date(2015, 4),
+    duration: '9 months',
     desc: '多媒体广播管理系统开发和维护。',
     projects: [
       {
@@ -139,6 +144,7 @@ const companies = [
     title: '高级软件工程师',
     from: new Date(2011, 10),
     to: new Date(2014, 4),
+    duration: '30 months',
     desc:
       '外派上海爱立信多媒体部门，主要基于爱立信IPTV系统的MSDK（JavaScript）的开发，将各厂商机顶盒集成到爱立信IPTV的解决方案。',
     projects: [
@@ -156,6 +162,7 @@ const companies = [
     title: 'Specialist',
     from: new Date(2010, 7),
     to: new Date(2011, 9),
+    duration: '14 months',
     desc: '上海联通项目组，负责现场需求，报表的分析和开发，维护工作。',
     projects: [],
   },
@@ -165,38 +172,20 @@ const companies = [
     title: 'Specialist',
     from: new Date(2008, 7),
     to: new Date(2010, 7),
+    duration: '24 months',
     desc: '公司内部ERP系统的开发维护。',
     projects: [],
   },
 ];
 
-export default React.forwardRef(({}, ref) => {
+export default React.forwardRef(({ scrollToNext }, ref) => {
   const [currentCompany, setCurrentCompany] = useState(0);
-  const [titleTranslateY, setTitleTranslateY] = useState(0);
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      const top = ref.current.getBoundingClientRect().top;
-      const height = ref.current.getBoundingClientRect().height;
-      // the range of top should in [window.innerHeight, 0, -height]
-      if (top < -height) {
-        // go to bottom
-        setTitleTranslateY(100);
-      } else if (top > window.innerHeight) {
-        // go to top
-        setTitleTranslateY(0);
-      } else {
-        setTitleTranslateY(
-          (((window.innerHeight - top) / (window.innerHeight + height)) * 100) |
-            0
-        );
-      }
-    });
-    return null;
-  }, []);
+  const titleTranslateY = useViewPercentage(ref);
 
   const slideToLeft = useCallback(
     throttle((position) => {
-      setCurrentCompany((position + companies.length - 1) % companies.length);
+      const current = (position + companies.length - 1) % companies.length;
+      setCurrentCompany(current);
     }, 1100),
     []
   );
@@ -267,9 +256,9 @@ export default React.forwardRef(({}, ref) => {
                 </div>
                 <div className={styles.companyHeaderSub}>
                   {company.from.getUTCFullYear()}.{company.from.getMonth()} -{' '}
-                  {company.to ? company.to.getUTCFullYear() : 'now'}.
+                  {company.to ? company.to.getUTCFullYear() + '.' : 'now'}
                   {company.to && company.to.getMonth()}
-                  &nbsp;&nbsp; 24 months
+                  &nbsp;&nbsp; {company.duration}
                 </div>
                 <div className={styles.companyTitle}>SE</div>
                 <div className={styles.companyDesc}>{company.desc}</div>
@@ -317,6 +306,7 @@ export default React.forwardRef(({}, ref) => {
         </div>
       </div>
       <div className={styles.boat}></div>
+      <ScrollToNext scrollToNext={scrollToNext} />
     </div>
   );
 });

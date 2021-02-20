@@ -16,6 +16,7 @@ function Resume() {
   const careerRef = useRef(null);
   const skillRef = useRef(null);
   const resumeRef = useRef(null);
+  const blogsRef = useRef(null);
   const scrollTo = (name) => {
     let ref = null;
     switch (name) {
@@ -60,6 +61,15 @@ function Resume() {
       />
       <Hero
         scrollToNext={() => {
+          careerRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }}
+      />
+      <Careers
+        ref={careerRef}
+        scrollToNext={() => {
           skillRef.current.scrollIntoView({
             behavior: 'smooth',
             block: 'start',
@@ -68,15 +78,14 @@ function Resume() {
       />
       <Skills
         scrollToNext={() => {
-          careerRef.current.scrollIntoView({
+          blogsRef.current.scrollIntoView({
             behavior: 'smooth',
             block: 'start',
           });
         }}
         ref={skillRef}
       />
-      <Careers ref={careerRef} />
-      <Blogs />
+      <Blogs ref={blogsRef} />
     </div>
   );
 }

@@ -13,7 +13,7 @@
 
   background-color: $color-black-2;
 
-  background-image: url("/images/sea.png");
+  background-image: url("/images/sea.png"), linear-gradient(to right, rgba($color-black-2, .92), rgba($color-black-2, .95) ), url("/images/sea-bg.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
@@ -70,7 +70,11 @@
 
 .companyHeaderSub {
   font-size: 1.5rem;
-  padding-bottom: 1rem;
+  padding: .5rem;
+  position: relative;
+  //border-radius: 3px;
+  margin-bottom: 1rem;
+  //background-image: linear-gradient(to right, rgba($color-red-1, .5), rgba($color-red-1, 0.1) 50%, rgba($color-red-1, 0) 50%);
 }
 
 .companyTitle {
@@ -174,6 +178,7 @@
                   85deg, $color-grey-dark-2, $color-black-light);
 
   min-width: 30rem;
+  max-width: 35rem;
   min-height: 35rem;
 
   border-radius: 1.5rem;
