@@ -13,7 +13,7 @@
 .skillContainer {
   position: relative;
   width: 100%;
-  max-width: $full-width;
+  max-width: var(--full-width);
   margin: 0 auto;
 }
 

@@ -7,12 +7,12 @@ const skills = [
   {
     key: 'Java',
     title: 'Java',
-    content: 'Springboot, JPA, PostgreSQL, MongoDB',
+    content: 'Spring boot, JPA, PostgreSQL, MongoDB',
   },
   {
     key: 'HTML, CSS',
     title: 'HTML, CSS, JavaScript',
-    content: 'CSS2, CSS3, Vanilla JavaScript ',
+    content: 'CSS2, CSS3, Vanilla JavaScript, Http/Https, Restful,  ',
   },
   {
     key: 'Reactjs',
@@ -22,7 +22,12 @@ const skills = [
   {
     key: 'Nodejs',
     title: 'Nodejs',
-    content: 'express',
+    content: 'Expressjs',
+  },
+  {
+    key: 'other',
+    title: 'Others',
+    content: 'Linux, Git, Maven/Gradle, Webpack, Scrum',
   },
 ];
 

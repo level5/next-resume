@@ -75,7 +75,9 @@ export default function ({ scrollToNext }) {
         >
           <div className={styles.heroInfo}>
             <h1>Huang Shifeng</h1>
-            <h2>I am a {title}</h2>
+            <h2>
+              <span>I am a {title}</span>
+            </h2>
           </div>
           <ul className={styles.descList}>
             <li className={styles.descItem}>

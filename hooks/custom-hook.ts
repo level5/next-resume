@@ -1,6 +1,6 @@
 import { ForwardedRef, MutableRefObject, useEffect, useState } from 'react';
 
-export function useViewPercentage(ref: ForwardedRef<any>) {
+export function useViewPercentage(ref: any) {
   const [titleTranslateY, setTitleTranslateY] = useState(0);
   useEffect(() => {
     const updateY = () => {

@@ -31,7 +31,7 @@
 
 .contentContainer {
   margin: 0 auto;
-  max-width: $full-width;
+  max-width: var(--full-width);
   width: 100%;
   height: 100%;
   display: flex;
@@ -49,6 +49,11 @@
     background-image: url("/images/hero-img-bg.jpg");
     background-position-x: right;
     background-size: cover;
+
+    @media only screen and (max-width: 1400px) {
+      right: -6rem;
+      filter: brightness(.3);
+    }
 
     &:before {
       content: '';
@@ -82,8 +87,12 @@
       margin-top: 1rem;
       font-size: 2rem;
       font-weight: 400;
+      position: relative;
+      display: inline-block;
     }
   }
+
+
 
   .descList {
     color: $color-white;

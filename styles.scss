@@ -1,3 +1,5 @@
+@import "mixins";
+
 *, *:before, *:after {
   box-sizing: inherit;
   margin: 0;
@@ -7,8 +9,45 @@
 html {
   // 默认字体为16px，我们这里将rem设置为 16px * 62.5% = 10px
   font-size: 62.5%;
+
+  @media only screen and (max-width: 1400px) {
+    font-size: 50%;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(
+                    90deg
+            ,#434343,#434343 1px,#262626 0,#262626);
+  }
+
+  &::-webkit-scrollbar {
+    background-color: #F5F5F5;
+    width: 15px;
+    height: 15px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #434343;
+    border-radius: 10px;
+
+    box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%), inset -2px -2px 2px rgb(0 0 0 / 25%);
+  }
 }
 
 body {
   box-sizing: border-box;
+
+  @include respond(tab-land) {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+:root {
+  --full-width: 128rem;
+
+  @media only screen and (max-width: 1400px) {
+    --full-width: 100rem;
+  }
 }

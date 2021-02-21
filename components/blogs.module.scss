@@ -25,7 +25,7 @@
 }
 
 .articleContainer {
-  width: $full-width;
+  width: var(--full-width);
   margin: 0 auto;
   display: flex;
 

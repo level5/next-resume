@@ -159,7 +159,7 @@ const companies = [
   {
     key: 'ZTE Soft',
     companyName: 'ZTE Soft',
-    title: 'Specialist',
+    title: 'Java软件工程师',
     from: new Date(2010, 7),
     to: new Date(2011, 9),
     duration: '14 months',
@@ -169,7 +169,7 @@ const companies = [
   {
     key: 'Synnex',
     companyName: 'Synnex',
-    title: 'Specialist',
+    title: 'Java软件工程师',
     from: new Date(2008, 7),
     to: new Date(2010, 7),
     duration: '24 months',
@@ -260,7 +260,7 @@ export default React.forwardRef(({ scrollToNext }, ref) => {
                   {company.to && company.to.getMonth()}
                   &nbsp;&nbsp; {company.duration}
                 </div>
-                <div className={styles.companyTitle}>SE</div>
+                <div className={styles.companyTitle}>{company.title}</div>
                 <div className={styles.companyDesc}>{company.desc}</div>
               </div>
             ))}

@@ -39,6 +39,9 @@ function Resume() {
   };
   return (
     <div className={styles.main} ref={resumeRef}>
+      <div className={styles.hintForSmallScreen}>
+        <span>还没有时间进行适配，请在桌面浏览器打开</span>
+      </div>
       <div
         className={styles.up}
         onClick={() => {

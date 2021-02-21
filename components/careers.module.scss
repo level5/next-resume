@@ -22,7 +22,7 @@
 }
 
 .contentContainer {
-  width: $full-width;
+  width: var(--full-width);
   margin: 0 auto;
 }
 
@@ -192,7 +192,10 @@
     z-index: 2;
     &~.project {
       transform: translateX(13rem);
+    }
 
+    @media only screen and (max-width: 1400px) {
+      transform: translateY(-1rem) rotateZ(0deg) scale(1.1);
     }
   }
 
