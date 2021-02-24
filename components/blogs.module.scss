@@ -1,5 +1,5 @@
 @import "varaibles";
-
+@import "mixins";
 .main {
   min-height: 100vh;
   padding: 10rem 0;
@@ -7,6 +7,8 @@
   background-color: $color-black-2;
   position: relative;
   overflow-x: hidden;
+
+  scroll-snap-align: start;
 }
 
 .eclipse {
@@ -56,21 +58,25 @@
 .moreArticlesSubTitle {
   margin-top: 3rem;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 200;
 }
 .moreIcon {
   &:link, &:visited {
     color: $color-white;
   }
-  font-size: 2.5rem;
-  width: 5rem;
-  height: 5rem;
+  font-size: 2rem;
+  width: 6rem;
+  height: 6rem;
+  line-height: 6rem;
   border-radius: 50%;
   background-color: $color-red-1;
   text-align: center;
-  line-height: 5rem;
   margin-left: 3rem;
   display: inline-block;
+
+  &:hover {
+    @include pulseButton;
+  }
 }
 // ========================
 
@@ -163,7 +169,7 @@
 }
 
 @keyframes neon {
-  0%, 10%, 20%, 30%, 40%, 50%, 100%{
+  0%, 10%, 20%, 100%{
     opacity: 1;
     box-shadow:
             0 0 5px #fff,
@@ -192,7 +198,7 @@
             0 0 100px var(--neon-shadow-color);
             //0 0 200px var(--shadow-color);
   }
-  9%, 19%, 29%, 39%, 49% {
+  9%, 19% {
     //opacity: 0;
     box-shadow: none;
     text-shadow: none;

@@ -1,0 +1,11 @@
+@import "varaibles";
+
+@keyframes buttonPulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba($color-red-1, 1)
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba($color-red-1, 0);
+  }
+}

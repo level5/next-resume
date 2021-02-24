@@ -1,3 +1,9 @@
+@import "animation";
+
+@mixin pulseButton {
+  animation: buttonPulse 1.5s infinite cubic-bezier(.25, 0, 0, 1);
+}
+
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
     @media only screen and (max-width: 37.5em) {

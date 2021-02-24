@@ -1,5 +1,12 @@
 function HomePage() {
-    return <div>Welcome to Next.js!</div>
+  return (
+    <div>
+      <p>Welcome to Next.js!</p>
+      <p>
+        <a href="https://beian.miit.gov.cn/">湘ICP备2021002770号</a>
+      </p>
+    </div>
+  );
 }
 
 export default HomePage;

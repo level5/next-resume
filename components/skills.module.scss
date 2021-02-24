@@ -9,6 +9,8 @@
   padding-bottom: 15rem;
   background-color: $color-black-2;
   overflow: hidden;
+
+  scroll-snap-align: start;
 }
 
 .skillContainer {
