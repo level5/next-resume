@@ -32,7 +32,10 @@ export default React.forwardRef(({}, ref) => {
           </h4>
         </div>
 
-        <div>整理中...</div>
+        <div className={styles.toBeContinueContainer}>
+          <div className={styles.screw}></div>
+          <div className={styles.toBeContinue}>In Preparation</div>
+        </div>
       </div>
     </div>
   );

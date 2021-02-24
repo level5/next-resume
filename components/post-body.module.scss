@@ -28,5 +28,15 @@
   img {
     width: 100%;
   }
+
+  :not(pre) > code {
+    background-color: $color-grey-light;
+    border-radius: 2px;
+    display: inline-block;
+    padding: 0 .2rem;
+    margin: 0 .2rem;
+  }
 }
+
+
 

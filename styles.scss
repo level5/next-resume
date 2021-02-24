@@ -1,10 +1,11 @@
 @import "mixins";
-
+@import url('https://fonts.googleapis.cnpmjs.org/css?family=Exo+2:200');
 *, *:before, *:after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
+@import "varaibles";
 
 html {
   // 默认字体为16px，我们这里将rem设置为 16px * 62.5% = 10px
@@ -46,7 +47,9 @@ body {
 
 :root {
   --full-width: 128rem;
-
+  --neon-shadow-color: #f43534;
+  --neon-box-shadow-color: #0055FF;
+  --shadow-color-light: white;
   @media only screen and (max-width: 1400px) {
     --full-width: 100rem;
   }

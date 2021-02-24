@@ -29,6 +29,9 @@ function Resume() {
       case 'career':
         ref = careerRef;
         break;
+      case 'blogs':
+        ref = blogsRef;
+        break;
       default:
         ref = resumeRef;
     }
