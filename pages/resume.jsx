@@ -11,12 +11,16 @@ import styles from './resume.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 function Resume() {
   const [menuOpened, setMenuOpened] = useState(false);
   const careerRef = useRef(null);
   const skillRef = useRef(null);
   const resumeRef = useRef(null);
   const blogsRef = useRef(null);
+
   const scrollTo = (name) => {
     let ref = null;
     switch (name) {
@@ -43,7 +47,7 @@ function Resume() {
   return (
     <div className={styles.main} ref={resumeRef}>
       <div className={styles.hintForSmallScreen}>
-        <span>还没有时间进行适配，请在桌面浏览器打开</span>
+        <span>还没有时间进行适配，请在桌面浏览器打开 </span>
       </div>
       <div
         className={styles.up}
@@ -97,3 +101,11 @@ function Resume() {
 }
 
 export default Resume;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['resume'])),
+    },
+  };
+}

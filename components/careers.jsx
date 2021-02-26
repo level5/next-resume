@@ -8,6 +8,7 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import throttle from 'lodash/throttle';
 import { useViewPercentage } from '../hooks/custom-hook';
 import ScrollToNext from './scroll-to-next';
+import { useTranslation } from 'next-i18next';
 
 const companies = [
   {
@@ -181,7 +182,7 @@ const companies = [
 export default React.forwardRef(({ scrollToNext }, ref) => {
   const [currentCompany, setCurrentCompany] = useState(0);
   const titleTranslateY = useViewPercentage(ref);
-
+  const { t } = useTranslation('resume');
   const slideToLeft = useCallback(
     throttle((position) => {
       const current = (position + companies.length - 1) % companies.length;
@@ -212,7 +213,7 @@ export default React.forwardRef(({ scrollToNext }, ref) => {
         }}
         className={styles.careerWorkingPeriod}
       >
-        Working Period
+        {t('working-period')}
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.companyContainer}>
@@ -288,13 +289,17 @@ export default React.forwardRef(({ scrollToNext }, ref) => {
                         ))}
                       </div>
                       <div className={styles.projectDesc}>
-                        <span className={styles.projectDescTitle}>描述</span>
+                        <span className={styles.projectDescTitle}>
+                          {t('description')}
+                        </span>
                         <p
                           dangerouslySetInnerHTML={{ __html: project.desc }}
                         ></p>
                       </div>
                       <div className={styles.projectResp}>
-                        <span className={styles.projectRespTitle}>职责</span>
+                        <span className={styles.projectRespTitle}>
+                          {t('responsibilities')}
+                        </span>
                         <p>{project.responsibilities}</p>
                       </div>
                     </div>

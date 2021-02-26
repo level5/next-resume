@@ -1,8 +1,10 @@
 import styles from './anchor.module.scss';
 import { useCallback } from 'react';
 import classname from 'classname';
+import { useTranslation } from 'next-i18next';
 
 export default function ({ menuOpened, toggleMenu, scrollTo }) {
+  const { t } = useTranslation('resume');
   const onClick = useCallback(
     (event) => {
       event.preventDefault();
@@ -67,7 +69,7 @@ export default function ({ menuOpened, toggleMenu, scrollTo }) {
       </ul>
       <div className={styles.contact}>
         <div className={styles.email}>
-          <span>contact me:</span>
+          <span>{t('contact-me')}:</span>
           <a href="mailto:huang.shifeng@outlook.com">
             huang.shifeng@outlook.com
           </a>

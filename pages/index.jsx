@@ -1,3 +1,5 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 function HomePage() {
   return (
     <div>
@@ -10,3 +12,11 @@ function HomePage() {
 }
 
 export default HomePage;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['resume'])),
+    },
+  };
+}

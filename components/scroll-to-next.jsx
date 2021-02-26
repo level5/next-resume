@@ -6,14 +6,16 @@ import {
   faArrowRight,
   faChevronLeft,
 } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'next-i18next';
 
 export default function ({ scrollToNext }) {
+  const { t } = useTranslation('resume');
   return (
     <div className={styles.scrollFlag} onClick={scrollToNext}>
       <span>
         <FontAwesomeIcon icon={faAngleDoubleLeft} />
       </span>
-      <span>scroll down</span>
+      <span>{t('scroll-down')}</span>
     </div>
   );
 }

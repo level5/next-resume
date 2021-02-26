@@ -16,6 +16,8 @@ import {
   faPager,
   faCalendarDay,
 } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 const titles = ['Web developer', 'Java developer', 'Gamer'];
 
@@ -28,6 +30,8 @@ export default function ({ scrollToNext }) {
   const [title, setTitle] = useState('');
   const [adding, setAdding] = useState(false);
 
+  const { t } = useTranslation('resume');
+  const router = useRouter();
   useEffect(() => {
     let stop = false;
 
@@ -74,7 +78,7 @@ export default function ({ scrollToNext }) {
           data-aos-duration="1500"
         >
           <div className={styles.heroInfo}>
-            <h1>Huang Shifeng</h1>
+            <h1>{t('huang-shifeng')}</h1>
             <h2>
               <span>I am a {title}</span>
             </h2>
@@ -84,61 +88,67 @@ export default function ({ scrollToNext }) {
               <span>
                 <FontAwesomeIcon icon={faCalendarDay} />
               </span>
-              <span>Birthday:</span>
-              <span>03.09.1983</span>
+              <span>{t('birthday')}:</span>
+              <span>
+                {new Intl.DateTimeFormat(router.locale, {
+                  year: 'numeric',
+                  month: '2-digit',
+                  day: '2-digit',
+                }).format(new Date(1983, 2, 9))}
+              </span>
             </li>
             <li className={styles.descItem}>
               <span>
                 <FontAwesomeIcon icon={faPager} />
               </span>
-              <span>Age:</span>
+              <span>{t('age')}:</span>
               <span>{new Date().getFullYear() - 1983}</span>
             </li>
             <li className={styles.descItem}>
               <span>
                 <FontAwesomeIcon icon={faMapMarkedAlt} />
               </span>
-              <span>Location:</span>
-              <span>Pudong, Shanghai</span>
+              <span>{t('location')}:</span>
+              <span>{t('my-address')}</span>
             </li>
             <li className={styles.descItem}>
               <span>
                 <FontAwesomeIcon icon={faGamepad} />
               </span>
-              <span>Interests:</span>
-              <span>Game, Reading</span>
+              <span>{t('interests')}:</span>
+              <span>{t('my-hobbies')}</span>
             </li>
             <li className={styles.descItem}>
               <span>
                 <FontAwesomeIcon icon={faUniversity} />
               </span>
-              <span>Study:</span>
-              <span>Central South University</span>
+              <span>{t('study')}:</span>
+              <span>{t('my-college')}</span>
             </li>
             <li className={styles.descItem}>
               <span>
                 <FontAwesomeIcon icon={faUserGraduate} />
               </span>
-              <span>Degree:</span>
-              <span>Master</span>
+              <span>{t('degree')}:</span>
+              <span>{t('my-degree')}</span>
             </li>
             <li className={styles.descItem}>
               <span>
                 <FontAwesomeIcon icon={faAt} />
               </span>
-              <span>Email:</span>
+              <span>{t('email')}:</span>
               <span>huang.shifeng@outlook.com</span>
             </li>
             <li className={styles.descItem}>
               <span>
                 <FontAwesomeIcon icon={faMobileAlt} />
               </span>
-              <span>Phone:</span>
+              <span>{t('phone')}:</span>
               <span>13636523358</span>
             </li>
           </ul>
           <div className={styles.cvDownload}>
-            <span>Download Resume</span>
+            <span>{t('download-resume')}</span>
             <span>
               <a href="/resources/huangshifeng-resume.pdf" download>
                 <FontAwesomeIcon icon={faCloudDownloadAlt} />

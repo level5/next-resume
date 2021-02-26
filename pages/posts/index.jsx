@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 import { getAllPosts } from '../../lib/api';
-
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export default function ({ posts }) {
   return (
     <div className={styles.main}>
@@ -30,12 +30,13 @@ export default function ({ posts }) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, locale }) {
   const posts = getAllPosts(['slug', 'title', 'tags', 'date', 'author']);
 
   return {
     props: {
       posts,
+      ...(await serverSideTranslations(locale, ['resume'])),
     },
   };
 }

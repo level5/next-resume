@@ -1,0 +1,12 @@
+[Unit]
+Description=my resume project
+After=network.target
+StartLimitInterval=0
+
+[Service]
+Type=forking
+Restart=always
+RestartSec=5
+User=monday
+ExecStart=/home/resume/start.sh
+

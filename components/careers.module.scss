@@ -310,7 +310,7 @@
 
 .careerWorkingPeriod {
   position: absolute;
-  left: 0;
+  left: 10rem;
   top: 50%;
   font-size: 14rem;
   font-weight: 900;
@@ -349,11 +349,12 @@
 }
 
 .projectDesc {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: $color-grey-light-2;
   .projectDescTitle {
     color: $color-grey-dark;
-    margin-bottom: .7rem;
+    margin-bottom: .3rem;
+    display: inline-block;
 
   }
     a:link, a:visited {
@@ -362,10 +363,11 @@
 }
 
 .projectResp {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: $color-grey-light-2;
   .projectRespTitle {
     color: $color-grey-dark;
-    margin-bottom: .7rem;
+    margin-bottom: .3rem;
+    display: inline-block;
   }
 }

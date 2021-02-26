@@ -4,10 +4,11 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useViewPercentage } from '../hooks/custom-hook';
 import React from 'react';
 import Lines from './lines';
+import { useTranslation } from 'next-i18next';
 
 export default React.forwardRef(({}, ref) => {
   const yPercentage = useViewPercentage(ref);
-  console.log(`${100 - yPercentage}%`);
+  const { t } = useTranslation('resume');
   return (
     <div ref={ref} className={styles.main}>
       <Lines />
@@ -19,13 +20,13 @@ export default React.forwardRef(({}, ref) => {
           transform: `translateX(${100 - yPercentage}%)`,
         }}
       >
-        My Blogs
+        {t('my-blogs')}
       </h1>
       <div className={styles.articleContainer}>
         <div className={styles.moreArticles}>
-          <h2 className={styles.moreArticlesTitle}>My Blogs</h2>
+          <h2 className={styles.moreArticlesTitle}>{t('my-blogs')}</h2>
           <h4 className={styles.moreArticlesSubTitle}>
-            More Blogs
+            {t('more-blogs')}
             <a href="/posts" target="_blank" className={styles.moreIcon}>
               <FontAwesomeIcon icon={faArrowRight} />
             </a>
@@ -34,7 +35,7 @@ export default React.forwardRef(({}, ref) => {
 
         <div className={styles.toBeContinueContainer}>
           <div className={styles.screw}></div>
-          <div className={styles.toBeContinue}>In Preparation</div>
+          <div className={styles.toBeContinue}>{t('in-preparation')}</div>
         </div>
       </div>
     </div>

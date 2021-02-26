@@ -3,6 +3,7 @@ import styles from './skills.module.scss';
 import classname from 'classname';
 import React from 'react';
 import ScrollToNext from './scroll-to-next';
+import { useTranslation } from 'next-i18next';
 const skills = [
   {
     key: 'Java',
@@ -32,6 +33,7 @@ const skills = [
 ];
 
 export default React.forwardRef(({ scrollToNext }, ref) => {
+  const { t } = useTranslation('resume');
   return (
     <div className={styles.skillMain} ref={ref}>
       <Lines />
@@ -40,7 +42,7 @@ export default React.forwardRef(({ scrollToNext }, ref) => {
       </div>
       <div className={styles.skillContainer}>
         <h1 data-aos="fade-up" className={styles.skillTitle}>
-          My Skills
+          {t('my-skills')}
         </h1>
         <div className={styles.skillContent}>
           <span className={styles.verticalLine}></span>
