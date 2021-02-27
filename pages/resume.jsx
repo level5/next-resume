@@ -13,8 +13,10 @@ import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import careersInEn from '../lib/career.en';
+import careersInZh from '../lib/career.zh';
 
-function Resume() {
+function Resume({ careers }) {
   const [menuOpened, setMenuOpened] = useState(false);
   const careerRef = useRef(null);
   const skillRef = useRef(null);
@@ -79,6 +81,7 @@ function Resume() {
       />
       <Careers
         ref={careerRef}
+        careers={careers}
         scrollToNext={() => {
           skillRef.current.scrollIntoView({
             behavior: 'smooth',
@@ -103,8 +106,11 @@ function Resume() {
 export default Resume;
 
 export async function getStaticProps({ locale }) {
+  const careers = locale === 'en' ? careersInEn : careersInZh;
+  console.log('gg', locale === 'en', locale);
   return {
     props: {
+      careers,
       ...(await serverSideTranslations(locale, ['resume'])),
     },
   };
