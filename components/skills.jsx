@@ -28,7 +28,7 @@ const skills = [
   {
     key: 'other',
     title: 'Others',
-    content: 'Linux, Git, Maven/Gradle, Webpack, Scrum',
+    content: 'Linux, Docker, Git, Maven/Gradle, Webpack, Scrum',
   },
 ];
 
