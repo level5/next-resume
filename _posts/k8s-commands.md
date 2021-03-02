@@ -1,8 +1,7 @@
 ---
-title: 常用docker命令
+title: K8s基本概念
 tags:
-  - container
-  - docker
+  - k8s
 date: '2018-11-05T00:00:00.000Z'
 ---
 

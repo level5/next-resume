@@ -6,7 +6,7 @@
   position: relative;
 }
 
-html[data-scroll="0"] .up {
+html[data-scroll="0"] .up, html:not([data-scroll]) .up {
   visibility: hidden;
   opacity: 0;
 }

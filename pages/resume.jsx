@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import Header from '../components/header';
 import Anchor from '../components/anchor';
 import Hero from '../components/hero';
