@@ -107,7 +107,6 @@ export default Resume;
 
 export async function getStaticProps({ locale }) {
   const careers = locale === 'en' ? careersInEn : careersInZh;
-  console.log('gg', locale === 'en', locale);
   return {
     props: {
       careers,

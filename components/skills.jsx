@@ -35,7 +35,7 @@ const skills = [
 export default React.forwardRef(({ scrollToNext }, ref) => {
   const { t } = useTranslation('resume');
   return (
-    <div className={styles.skillMain} ref={ref}>
+    <section className={styles.skillMain} ref={ref}>
       <Lines />
       <div className={styles.balloon}>
         <div></div>
@@ -68,6 +68,6 @@ export default React.forwardRef(({ scrollToNext }, ref) => {
         </div>
       </div>
       <ScrollToNext scrollToNext={scrollToNext} />
-    </div>
+    </section>
   );
 });

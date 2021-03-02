@@ -63,7 +63,7 @@ export default function ({ scrollToNext }) {
   }, []);
 
   return (
-    <div className={styles.heroContainer}>
+    <section className={styles.heroContainer}>
       <Lines />
       <div
         className={classname({
@@ -150,7 +150,10 @@ export default function ({ scrollToNext }) {
           <div className={styles.cvDownload}>
             <span>{t('download-resume')}</span>
             <span>
-              <a href="/resources/huangshifeng-resume.pdf" download>
+              <a
+                href={`/resources/${router.locale}huangshifeng-resume.pdf`}
+                download
+              >
                 <FontAwesomeIcon icon={faCloudDownloadAlt} />
               </a>
             </span>
@@ -158,6 +161,6 @@ export default function ({ scrollToNext }) {
         </div>
       </div>
       <ScrollToNext scrollToNext={scrollToNext} />
-    </div>
+    </section>
   );
 }

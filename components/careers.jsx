@@ -37,6 +37,7 @@ export default React.forwardRef(({ scrollToNext, careers: companies }, ref) => {
   return (
     <div ref={ref} className={styles.careerContainer}>
       <Lines />
+      <div className={styles.boat}></div>
       <div
         style={{
           transform: `translateY(-${100 - titleTranslateY}%)`,
@@ -96,7 +97,10 @@ export default React.forwardRef(({ scrollToNext, careers: companies }, ref) => {
                   &nbsp;&nbsp; {company.duration}
                 </div>
                 <div className={styles.companyTitle}>{company.title}</div>
-                <div className={styles.companyDesc}>{company.desc}</div>
+                <div
+                  className={styles.companyDesc}
+                  dangerouslySetInnerHTML={{ __html: company.desc }}
+                />
               </div>
             ))}
           </div>
@@ -126,9 +130,7 @@ export default React.forwardRef(({ scrollToNext, careers: companies }, ref) => {
                         <span className={styles.projectDescTitle}>
                           {t('description')}
                         </span>
-                        <p
-                          dangerouslySetInnerHTML={{ __html: project.desc }}
-                        ></p>
+                        <p dangerouslySetInnerHTML={{ __html: project.desc }} />
                       </div>
                       <div className={styles.projectResp}>
                         <span className={styles.projectRespTitle}>
@@ -144,7 +146,7 @@ export default React.forwardRef(({ scrollToNext, careers: companies }, ref) => {
           </div>
         </div>
       </div>
-      <div className={styles.boat}></div>
+
       <ScrollToNext scrollToNext={scrollToNext} />
     </div>
   );

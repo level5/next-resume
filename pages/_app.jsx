@@ -12,6 +12,7 @@ const updateScroll = () => {
 const debounceUpdateScroll = debounce(updateScroll, 200);
 
 // This default export is required in a new `pages/_app.js` file.
+// TODO: 这部分逻辑移动到resume里面去。
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     AOS.init();

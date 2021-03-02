@@ -3,7 +3,6 @@ import { getAllPosts, getPostBySlug, markdownToHtml } from '../../lib/api';
 import PostBody from '../../components/post-body';
 import PostHeader from '../../components/post-header';
 import styles from './slug.module.scss';
-import { useEffect } from 'react';
 
 export default function ({ post }) {
   return (

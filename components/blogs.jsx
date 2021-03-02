@@ -10,7 +10,7 @@ export default React.forwardRef(({}, ref) => {
   const yPercentage = useViewPercentage(ref);
   const { t } = useTranslation('resume');
   return (
-    <div ref={ref} className={styles.main}>
+    <section ref={ref} className={styles.main}>
       <Lines />
       <div className={styles.eclipse}></div>
       <h1
@@ -38,6 +38,6 @@ export default React.forwardRef(({}, ref) => {
           <div className={styles.toBeContinue}>{t('in-preparation')}</div>
         </div>
       </div>
-    </div>
+    </section>
   );
 });
